@@ -1,0 +1,72 @@
+.footer{
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    width: 1920px;
+}
+
+.footer-top, .footer-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-top {
+    height: 311px;
+    background-color: #212121;
+    color: white;
+}
+
+.footer-navigation{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 700px;
+    margin-right: 405px;
+}
+
+.logo-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    width: 200px;
+    height: 160px;
+    margin-left: 405px;
+}
+
+.private-policy-link, .menu-link { &:hover {
+    text-decoration: underline;
+    };
+    text-decoration: none;
+    color: #212121;
+}
+
+.menu-link {
+    color: white;
+}
+
+.menu-heading {
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.menu-links {
+    margin-top: 10px;
+}
+
+.social-network-icon {
+    float: left;
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    height: 85px;
+    margin: 0px 405px;
+    color: #212121;
+}
