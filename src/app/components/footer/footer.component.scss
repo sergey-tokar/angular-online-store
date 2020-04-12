@@ -1,9 +1,4 @@
-@font-face {
-    font-family: Montserrat;
-    src: url(/assets/fonts/Montserrat-Medium.ttf);
-}
-
-footer{
+.footer{
     font-family: Montserrat, sans-serif;
     font-size: 14px;
     line-height: 22px;
@@ -22,7 +17,7 @@ footer{
     color: white;
 }
 
-.footer_navigation{
+.footer-navigation{
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -30,7 +25,7 @@ footer{
     margin-right: 405px;
 }
 
-.logo_group {
+.logo-group {
     display: flex;
     flex-wrap: wrap;
     align-content: space-between;
@@ -52,18 +47,18 @@ a:hover {
     color: white;
 }
 
-h3 {
+.menu-heading {
     font-size: 10px;
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 20px;
 }
 
-li {
+.menu-links {
     margin-top: 10px;
 }
 
-.social_network img {
+.social-network img {
     float: left;
     width: 24px;
     height: 24px;
