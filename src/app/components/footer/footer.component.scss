@@ -1,0 +1,79 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(/assets/fonts/Montserrat-Medium.ttf);
+}
+
+footer{
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    width: 1920px;
+}
+
+.footer-top, .footer-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-top {
+    height: 311px;
+    background-color: #212121;
+    color: white;
+}
+
+.footer_navigation{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 700px;
+    margin-right: 405px;
+}
+
+.logo_group {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    width: 200px;
+    height: 160px;
+    margin-left: 405px;
+}
+
+a {
+    text-decoration: none;
+    color: #212121;
+}
+
+a:hover { 
+    text-decoration: underline; 
+}
+
+.footer-top a {
+    color: white;
+}
+
+h3 {
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-top: 10px;
+}
+
+.social_network img {
+    float: left;
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    height: 85px;
+    margin: 0px 405px;
+    color: #212121;
+}
