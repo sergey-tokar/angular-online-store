@@ -3,7 +3,7 @@
     src: url(/src/assets/fonts/Montserrat-Medium.ttf);
 }
 
-header {
+.header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -12,18 +12,18 @@ header {
     background-color: #F9F6F1;
 }
 
-nav {
+.navigation {
     width: 260px;
     margin-left: 405px;
 }
 
-ul {
+.navigation-menu {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-li {
+.navigation-menu-button {
     font-family: Montserrat;
     font-size: 14px;
     line-height: 17px;
@@ -43,7 +43,7 @@ a {
     margin-right: 405px;
 }
 
-.counter_purchase {
+.counter-purchase {
     float: right;
     font-family: Montserrat;
     font-size: 10px;
