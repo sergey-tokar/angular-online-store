@@ -34,16 +34,14 @@
     margin-left: 405px;
 }
 
-a {
+.private-policy-link, .menu-link { &:hover {
+    text-decoration: underline;
+    };
     text-decoration: none;
     color: #212121;
 }
 
-a:hover { 
-    text-decoration: underline; 
-}
-
-.footer-top a {
+.menu-link {
     color: white;
 }
 
@@ -58,7 +56,7 @@ a:hover {
     margin-top: 10px;
 }
 
-.social-network img {
+.social-network-icon {
     float: left;
     width: 24px;
     height: 24px;
