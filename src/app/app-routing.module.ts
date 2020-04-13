@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 import { CatalogComponent } from './pages/catalog/catalog.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { ProductCardComponent } from './pages/product-card/product-card.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'about-us',
     component: AboutUsComponent,
+  },
+  {
+    path: "catalog/:id",
+    component: ProductCardComponent,
   },
   {
     path: '**', 
