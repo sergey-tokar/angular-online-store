@@ -10,8 +10,7 @@ import { ProductCardComponent } from './pages/product-card/product-card.componen
 const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
-    redirectTo: '/home',
+    component: HomeComponent,
   },
   {
     path: 'home',
