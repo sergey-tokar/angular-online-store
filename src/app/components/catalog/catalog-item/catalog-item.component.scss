@@ -1,0 +1,41 @@
+.catalog-item {
+    width: 255px;
+    height: 350px;
+    background-image: url("/assets/img/catalog-item-frame.svg");
+    margin: 25px auto;
+}
+
+.product-picture {
+    width: 205px;
+    height: 211px;
+    margin: 22px 25px 25px 25px;
+}
+
+.product-name, .product-price {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    text-align: center;
+}
+
+.product-name {
+    display: block;
+    margin: auto;
+    width: 112px;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 600;
+    color: black;
+    text-decoration: none;
+    &:hover {
+    text-decoration: underline;
+    };
+}
+
+.product-price {
+    margin-top: 15px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: #D7B399;
+}
