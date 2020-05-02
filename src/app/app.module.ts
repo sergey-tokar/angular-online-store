@@ -11,7 +11,7 @@ import { CatalogComponent as CatalogPageComponent } from './pages/catalog/catalo
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ProductCardComponent } from './pages/product-card/product-card.component';
 import { CatalogItemComponent } from './components/catalog/catalog-item/catalog-item.component';
-import { CatalogComponent } from './components/catalog/catalog.component';
+import { CatalogMenuComponent } from './components/catalog/catalog-menu/catalog-menu.component';
 
 
 @NgModule({
@@ -25,7 +25,7 @@ import { CatalogComponent } from './components/catalog/catalog.component';
     AboutUsComponent,
     ProductCardComponent,
     CatalogItemComponent,
-    CatalogComponent,
+    CatalogMenuComponent,
   ],
   imports: [
     BrowserModule,

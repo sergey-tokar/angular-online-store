@@ -5,7 +5,8 @@
     width: 1920px;
 }
 
-.footer-top, .footer-bottom{
+.footer-top,
+.footer-bottom{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -34,9 +35,12 @@
     margin-left: 405px;
 }
 
-.private-policy-link, .menu-link { &:hover {
-    text-decoration: underline;
-    };
+.private-policy-link,
+.menu-link { 
+    &:hover {
+        text-decoration: underline;
+    }
+
     text-decoration: none;
     color: #212121;
 }

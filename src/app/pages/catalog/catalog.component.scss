@@ -1,8 +1,28 @@
-p {
-    display: block;
+.catalog {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-gap: 2vw;
+    width: 1110px;
     margin: 50px auto;
-    width: 500px;
+}
+
+.heading-category {
     font-family: Montserrat, sans-serif;
-    text-align: center;
-    font-size: 25px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.heading-subcategory {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.products {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;
 }

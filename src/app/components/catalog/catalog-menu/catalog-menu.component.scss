@@ -1,0 +1,30 @@
+.categories-menu {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+}
+
+.heading-categories-link,
+.subcategory-link {
+    &:hover {
+        text-decoration: underline;
+    }
+
+    text-decoration: none;
+    color: #212121;
+}
+
+.heading-categories-link {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.heading-category {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 35px;
+}
+
+.subcategory-link {
+display: block;
+margin: 15px 0px 15px 25px;
+}

@@ -11,7 +11,8 @@
     margin: 22px 25px 25px 25px;
 }
 
-.product-name, .product-price {
+.product-name,
+.product-price {
     font-family: Montserrat, sans-serif;
     font-style: normal;
     text-align: center;
@@ -26,9 +27,10 @@
     font-weight: 600;
     color: black;
     text-decoration: none;
+
     &:hover {
-    text-decoration: underline;
-    };
+        text-decoration: underline;
+    }    
 }
 
 .product-price {
