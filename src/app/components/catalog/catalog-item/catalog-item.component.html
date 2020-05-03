@@ -1,5 +1,5 @@
 <div class="catalog-item">
-    <img class="product-picture" src="/assets/img/product-picture.png">
-    <a class="product-name" href="#">Коктельное платье</a>
-    <p class="product-price">{{ 40000 | currency : 'RUB' : 'symbol-narrow' : '1.0-2' }}</p>
+    <img class="product-picture" [src]='productPictureUrl'>
+    <a class="product-name" href="#" [title] = 'productName'>{{ productName.substr(0, 20) }}</a>
+    <p class="product-price">{{ productPrice | currency : 'RUB' : 'symbol-narrow' : '1.0-2' }}</p>
 </div>
