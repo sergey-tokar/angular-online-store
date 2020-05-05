@@ -18,7 +18,10 @@ export class CatalogComponent implements OnInit {
   }
 
   private loadProducts(){
-    this.productService.getAllProducts().subscribe(products => this.products = products);
+    this.productService.getAllProducts().subscribe(products => {
+      this.products = products;
+      this.products.forEach(item => item.shortTitle = item.title.substr(0, 20));
+    });
   }
 
 }

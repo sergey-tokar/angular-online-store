@@ -7,12 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CatalogItemComponent implements OnInit {
 
-  constructor() { }
-
   ngOnInit(): void {
   } 
 
   @Input() productName: string;
   @Input() productPrice: number;
   @Input() productPictureUrl: string;
+  @Input() productTitle: string;
 }

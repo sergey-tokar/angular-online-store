@@ -8,7 +8,7 @@
 
         <div class="products">
             <app-catalog-item 
-            *ngFor="let product of products" [productName] = "product.title" [productPrice] = "product.price" [productPictureUrl] = "product.image" >
+            *ngFor="let product of products" [productName] = "product.shortTitle" [productTitle] = "product.title" [productPrice] = "product.price" [productPictureUrl] = "product.image" >
             </app-catalog-item>
         </div>
     </div>
