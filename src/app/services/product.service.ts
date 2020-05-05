@@ -15,10 +15,11 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-  public getAllProducts(): Observable<IProduct[]>{
+  public getAllProducts(): Observable<IProduct[]> {
     return this.http.get(environment.backEndHost + Api.products.getAllProducts)
-    .pipe(map(
-      (response: IProduct[]) => response,
-    ));
+      .pipe(map(
+        (response: IProduct[]) => response,
+      ));
   }
+  
 }

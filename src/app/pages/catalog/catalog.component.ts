@@ -10,6 +10,7 @@ import { IProduct } from 'src/app/core/interfaces/product';
 })
 export class CatalogComponent implements OnInit {
   public products: IProduct[];
+  public productsCategories: string[];
 
   constructor(private productService: ProductService) { }
 
@@ -17,10 +18,17 @@ export class CatalogComponent implements OnInit {
     this.loadProducts();
   }
 
-  private loadProducts(){
+  private loadProducts() {
     this.productService.getAllProducts().subscribe(products => {
       this.products = products;
-      this.products.forEach(item => item.shortTitle = item.title.substr(0, 20));
+      this.productsCategories = [];
+      this.products.forEach(item => {
+        item.shortTitle = item.title.substr(0, 20);
+        if (!this.productsCategories.includes(item.category.toUpperCase())) {
+          this.productsCategories.push(item.category.toUpperCase());
+        };
+      });
+      this.productsCategories.sort().push('ALL PRODUCTS');
     });
   }
 
