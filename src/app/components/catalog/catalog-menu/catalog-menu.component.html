@@ -2,7 +2,7 @@
 
     <div class="categories">
         <div class="subcategories">
-            <a class="subcategory-link" routerLink="/catalog">{{ productsCategory }}</a>
+            <div class="subcategory-link" (click)="getProductsByCategory(productsCategory)">{{ productsCategory }}</div>
         </div>
     </div>
 </nav>

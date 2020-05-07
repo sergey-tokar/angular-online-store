@@ -9,8 +9,9 @@
     <div class="products-list">
 
         <div class="products">
-            <app-catalog-item *ngFor="let product of products"
-                [productName] = "product.shortTitle" [productTitle] = "product.title" [productPrice] = "product.price" [productPictureUrl] = "product.image" >
+            <app-catalog-item *ngFor="let listOfProduct of listOfProducts"
+                [productName] = "listOfProduct.shortTitle" [productTitle] = "listOfProduct.title" [productPrice] = "listOfProduct.price" 
+                [productPictureUrl] = "listOfProduct.image" >
             </app-catalog-item>
         </div>
     </div>

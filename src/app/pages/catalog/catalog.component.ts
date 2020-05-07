@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { IProduct } from 'src/app/core/interfaces/product';
+import { ProductList } from 'src/app/models/product.list';
 
 
 @Component({
@@ -9,9 +10,10 @@ import { IProduct } from 'src/app/core/interfaces/product';
   styleUrls: ['./catalog.component.scss']
 })
 export class CatalogComponent implements OnInit {
-  public products: IProduct[];
+  public listOfProducts: IProduct[];
   public productsCategories: string[];
-
+  public products: ProductList;
+  private state: number = 0;
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
@@ -19,17 +21,19 @@ export class CatalogComponent implements OnInit {
   }
 
   private loadProducts() {
-    this.productService.getAllProducts().subscribe(products => {
-      this.products = products;
-      this.productsCategories = [];
-      this.products.forEach(item => {
-        item.shortTitle = item.title.substr(0, 20);
-        if (!this.productsCategories.includes(item.category.toUpperCase())) {
-          this.productsCategories.push(item.category.toUpperCase());
-        };
-      });
-      this.productsCategories.sort().push('ALL PRODUCTS');
-    });
+    if (!this.state) {
+      this.productService.getAllProducts().subscribe(products => {
+        this.products = products;
+        this.listOfProducts = products.productList;
+        this.productsCategories = products.getCategories();
+        this.state = 1;
+      })
+    };
+
+  }
+
+  public getProductsByCategory(category: string) {
+    this.listOfProducts = this.products.getProductByCategory(category);
   }
 
 }
