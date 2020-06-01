@@ -6,64 +6,10 @@
 
     <div class="products-list">
 
-        <h2 class="heading-category">Мужская коллекция</h2>
-
-        <h3 class="heading-subcategory">Обувь</h3>
         <div class="products">
-            <app-catalog-item></app-catalog-item>
-            <app-catalog-item></app-catalog-item>
-            <app-catalog-item></app-catalog-item>
-            <app-catalog-item></app-catalog-item>
-            <app-catalog-item></app-catalog-item>
-            <app-catalog-item></app-catalog-item>
+            <app-catalog-item 
+            *ngFor="let product of products" [productName] = "product.shortTitle" [productTitle] = "product.title" [productPrice] = "product.price" [productPictureUrl] = "product.image" >
+            </app-catalog-item>
         </div>
-
-        <h3 class="heading-subcategory">Пуловеры</h3>
-        <div class="products">
-            <app-catalog-item></app-catalog-item>
-            <app-catalog-item></app-catalog-item>
-            <app-catalog-item></app-catalog-item>
-            <app-catalog-item></app-catalog-item>
-            <app-catalog-item></app-catalog-item>
-            <app-catalog-item></app-catalog-item>
-        </div>
-
-        <h3 class="heading-subcategory">Костюмы</h3>
-        <div class="products">
-            <app-catalog-item></app-catalog-item>
-            <app-catalog-item></app-catalog-item>
-            <app-catalog-item></app-catalog-item>
-        </div>
-
-        <h2 class="heading-category">Женская коллекция</h2>
-
-        <h3 class="heading-subcategory">Обувь</h3>
-        <div class="products">
-            <app-catalog-item></app-catalog-item>
-            <app-catalog-item></app-catalog-item>
-            <app-catalog-item></app-catalog-item>
-            <app-catalog-item></app-catalog-item>
-            <app-catalog-item></app-catalog-item>
-            <app-catalog-item></app-catalog-item>
-        </div>
-
-
-        <h3 class="heading-subcategory">Пуловеры</h3>
-        <div class="products">
-            <app-catalog-item></app-catalog-item>
-            <app-catalog-item></app-catalog-item>
-            <app-catalog-item></app-catalog-item>
-            <app-catalog-item></app-catalog-item>
-            <app-catalog-item></app-catalog-item>
-            <app-catalog-item></app-catalog-item>
-        </div>
-
-        <h3 class="heading-subcategory">Костюмы</h3>
-        <div class="products">
-            <app-catalog-item></app-catalog-item>
-            <app-catalog-item></app-catalog-item>
-            <app-catalog-item></app-catalog-item>
-        </div>
-
     </div>
 </div>

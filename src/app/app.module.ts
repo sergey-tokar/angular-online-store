@@ -12,6 +12,7 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ProductCardComponent } from './pages/product-card/product-card.component';
 import { CatalogItemComponent } from './components/catalog/catalog-item/catalog-item.component';
 import { CatalogMenuComponent } from './components/catalog/catalog-menu/catalog-menu.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { CatalogMenuComponent } from './components/catalog/catalog-menu/catalog-
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
