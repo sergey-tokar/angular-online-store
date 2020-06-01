@@ -5,7 +5,7 @@ export class ProductList {
     private products: Product[];
 
     constructor(productList: IProduct[]) {
-        this.products = productList.map(productFromServer => {return new Product(productFromServer)});
+        this.products = productList.map(productFromServer => new Product(productFromServer));
     }
 
     public getAllProducts(): Product[] {

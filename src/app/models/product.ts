@@ -8,7 +8,6 @@ export class Product {
     public category: string;
     public description: string;
     public image: string;
-    private _shortTitle: string;
 
     constructor(productFromServer: IProduct) {
         this.productFromServer = productFromServer;
@@ -21,7 +20,6 @@ export class Product {
     }
     
     get shortTitle() {
-        this._shortTitle = this.productFromServer.title.substr(0, 20);
-        return this._shortTitle;
+        return this.productFromServer.title.substr(0, 20);
     }
 }
