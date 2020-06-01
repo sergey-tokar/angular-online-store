@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { IProduct } from 'src/app/core/interfaces/product';
+import { ProductList } from 'src/app/models/product.list';
+import { Product } from 'src/app/models/product';
 
 
 @Component({
@@ -9,19 +11,30 @@ import { IProduct } from 'src/app/core/interfaces/product';
   styleUrls: ['./catalog.component.scss']
 })
 export class CatalogComponent implements OnInit {
-  public products: IProduct[];
-
+  public products: Product[];
+  public productsCategories: String[];
+  public productList: ProductList;
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
     this.loadProducts();
   }
 
-  private loadProducts(){
-    this.productService.getAllProducts().subscribe(products => {
-      this.products = products;
-      this.products.forEach(item => item.shortTitle = item.title.substr(0, 20));
-    });
+  private loadProducts() {
+    this.productService.getAllProductsFromServer().subscribe(productsList => {
+      this.productList = productsList;
+      this.products = this.productList.getAllProducts();
+      this.productsCategories = productsList.getCategories();
+      this.productsCategories.push('all products');
+    })
   }
 
+  public getProductsByCategory(selectedCategory: string): Product[] {
+    if (selectedCategory !== 'all products') {
+      this.products = this.productList.getProductByCategory(selectedCategory);
+    } else { 
+      this.products = this.productList.getAllProducts();
+    };
+    return this.products;
+  }
 }

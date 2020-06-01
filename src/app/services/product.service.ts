@@ -5,6 +5,8 @@ import { environment } from 'src/environments/environment';
 import { Api } from '../api';
 import { IProduct } from '../core/interfaces/product';
 import { map, tap } from 'rxjs/operators';
+import { CatalogMenuItemComponent } from '../components/catalog/catalog-menu-item/catalog-menu-item.component';
+import { ProductList } from '../models/product.list';
 
 
 @Injectable({
@@ -15,10 +17,11 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-  public getAllProducts(): Observable<IProduct[]>{
+  public getAllProductsFromServer(): Observable<ProductList> {
     return this.http.get(environment.backEndHost + Api.products.getAllProducts)
-    .pipe(map(
-      (response: IProduct[]) => response,
-    ));
+      .pipe(map(
+        (response: IProduct[]) => new ProductList(response),
+      ));
   }
+
 }
