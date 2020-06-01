@@ -1,17 +1,17 @@
 <div class="catalog">
 
     <div class="catalog-menu">
-        <app-catalog-menu *ngFor="let productsCategory of productsCategories"
-            [productsCategory] = "productsCategory">            
-        </app-catalog-menu>
+        <app-catalog-menu-item *ngFor="let productsCategory of productsCategories" [productsCategory]="productsCategory" 
+        (getProductsByCategory)="getProductsByCategory($event)" >
+        </app-catalog-menu-item>
     </div>
 
     <div class="products-list">
 
         <div class="products">
-            <app-catalog-item *ngFor="let listOfProduct of listOfProducts"
-                [productName] = "listOfProduct.shortTitle" [productTitle] = "listOfProduct.title" [productPrice] = "listOfProduct.price" 
-                [productPictureUrl] = "listOfProduct.image" >
+            <app-catalog-item *ngFor="let product of products"
+                [productName] = "product.shortTitle" [productTitle] = "product.title" [productPrice] = "product.price" 
+                [productPictureUrl] = "product.image" >
             </app-catalog-item>
         </div>
     </div>

@@ -11,7 +11,7 @@ import { CatalogComponent as CatalogPageComponent } from './pages/catalog/catalo
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ProductCardComponent } from './pages/product-card/product-card.component';
 import { CatalogItemComponent } from './components/catalog/catalog-item/catalog-item.component';
-import { CatalogMenuComponent } from './components/catalog/catalog-menu/catalog-menu.component';
+import { CatalogMenuItemComponent } from './components/catalog/catalog-menu-item/catalog-menu-item.component';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -26,7 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     AboutUsComponent,
     ProductCardComponent,
     CatalogItemComponent,
-    CatalogMenuComponent,
+    CatalogMenuItemComponent,
   ],
   imports: [
     BrowserModule,

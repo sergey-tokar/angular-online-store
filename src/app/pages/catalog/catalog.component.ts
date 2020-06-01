@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { IProduct } from 'src/app/core/interfaces/product';
 import { ProductList } from 'src/app/models/product.list';
+import { Product } from 'src/app/models/product';
 
 
 @Component({
@@ -10,10 +11,9 @@ import { ProductList } from 'src/app/models/product.list';
   styleUrls: ['./catalog.component.scss']
 })
 export class CatalogComponent implements OnInit {
-  public listOfProducts: IProduct[];
-  public productsCategories: string[];
-  public products: ProductList;
-  private state: number = 0;
+  public products: Product[];
+  public productsCategories: String[];
+  public productList: ProductList;
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
@@ -21,19 +21,20 @@ export class CatalogComponent implements OnInit {
   }
 
   private loadProducts() {
-    if (!this.state) {
-      this.productService.getAllProducts().subscribe(products => {
-        this.products = products;
-        this.listOfProducts = products.productList;
-        this.productsCategories = products.getCategories();
-        this.state = 1;
-      })
+    this.productService.getAllProductsFromServer().subscribe(productsList => {
+      this.productList = productsList;
+      this.products = this.productList.getAllProducts();
+      this.productsCategories = productsList.getCategories();
+      this.productsCategories.push('all products');
+    })
+  }
+
+  public getProductsByCategory(selectedCategory: string): Product[] {
+    if (selectedCategory !== 'all products') {
+      this.products = this.productList.getProductByCategory(selectedCategory);
+    } else { 
+      this.products = this.productList.getAllProducts();
     };
-
+    return this.products;
   }
-
-  public getProductsByCategory(category: string) {
-    this.listOfProducts = this.products.getProductByCategory(category);
-  }
-
 }

@@ -1,50 +1,30 @@
 import { IProduct } from '../core/interfaces/product';
+import { Product } from './product';
 
 export class ProductList {
-    public productList: IProduct[];
-    public categoriesList: string[];
+    private products: Product[];
 
     constructor(productList: IProduct[]) {
-        this.productList = productList;
-        this.addShortTitle();
-        this.changeCategoriesToUpperCase();
+        this.products = productList.map(productFromServer => {return new Product(productFromServer)});
     }
 
-    private addShortTitle() {
-        this.productList.map(item => {
-            item.shortTitle = item.title.substr(0, 20);
-        })
+    public getAllProducts(): Product[] {
+        return this.products;
     }
 
-    private changeCategoriesToUpperCase() {
-        this.productList.map(item => {
-            item.category = item.category.toUpperCase();
-        })
+    public getProductById(id: number): Product {
+        return this.products.find( product => product.id === id);
     }
 
-    public getAllProducts() {
-        return this.productList;
+    public getCategories(): String[] {
+        let categoriesList = new Set<String>();
+        this.products.forEach( product => categoriesList.add(product.category));
+        let categories: String[] = [...categoriesList];
+        categories.sort();
+        return categories;
     }
 
-    public getProductById(id: number) {
-        return this.productList.find(item => item.id === id);
-    }
-
-    public getCategories() {
-        this.categoriesList = [];
-        this.productList.forEach(item => {
-            if (!this.categoriesList.includes(item.category)) {
-                this.categoriesList.push(item.category);
-            };
-        });
-        this.categoriesList.sort().push('ALL PRODUCTS');
-        return this.categoriesList;
-    }
-
-    public getProductByCategory(category: string) {
-        if (category !== 'ALL PRODUCTS') {
-            return this.productList.filter(item => item.category === category);
-        };
-        return this.productList;
+    public getProductByCategory(category: string): Product[] {
+        return this.products.filter( product => product.category === category);
     }
 }
