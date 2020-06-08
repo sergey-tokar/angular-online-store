@@ -1,5 +1,5 @@
 export const Api = {
-    products: { 
+    products: {
         getAllProducts: '/products',
         getProductsByCategory: '/products/category/',
     },

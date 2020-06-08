@@ -12,7 +12,7 @@ import { Product } from 'src/app/models/product';
 })
 export class CatalogComponent implements OnInit {
   public products: Product[];
-  public productsCategories: String[];
+  public productsCategories: string[];
   public productList: ProductList;
   constructor(private productService: ProductService) { }
 
@@ -26,15 +26,15 @@ export class CatalogComponent implements OnInit {
       this.products = this.productList.getAllProducts();
       this.productsCategories = productsList.getCategories();
       this.productsCategories.push('all products');
-    })
+    });
   }
 
   public getProductsByCategory(selectedCategory: string): Product[] {
     if (selectedCategory !== 'all products') {
       this.products = this.productList.getProductByCategory(selectedCategory);
-    } else { 
+    } else {
       this.products = this.productList.getAllProducts();
-    };
+    }
     return this.products;
   }
 }

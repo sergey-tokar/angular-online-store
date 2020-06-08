@@ -29,11 +29,11 @@ const routes: Routes = [
     component: AboutUsComponent,
   },
   {
-    path: "catalog/:id",
+    path: 'catalog/:id',
     component: ProductCardComponent,
   },
   {
-    path: '**', 
+    path: '**',
     redirectTo: '/home',
   },
 ];

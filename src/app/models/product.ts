@@ -18,7 +18,7 @@ export class Product {
         this.description = this.productFromServer.description;
         this.image = this.productFromServer.image;
     }
-    
+
     get shortTitle() {
         return this.productFromServer.title.substr(0, 20);
     }
