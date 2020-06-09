@@ -1,16 +1,17 @@
 .categories-menu {
-    font-family: Montserrat, sans-serif;
-    font-style: normal;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
 }
 
-.subcategory-link {
-    display: block;
-    margin: 0px 0px 15px 25px;
+.category-link {
+  display: block;
+  margin: 0px 0px 15px 25px;
 
-    &:hover {
-        text-decoration: underline;
-    }
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 
-    text-transform: uppercase;
-    color: #212121;
+  text-transform: uppercase;
+  color: #212121;
 }

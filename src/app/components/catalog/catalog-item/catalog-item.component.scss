@@ -1,43 +1,76 @@
 .catalog-item {
-    width: 255px;
-    height: 350px;
-    background-image: url("/assets/img/catalog-item-frame.svg");
-    margin: 0px auto 25px auto;
+  width: 255px;
+  height: 400px;
+  margin: 0px auto 25px auto;
+  background-image: linear-gradient(to right, #D7B399 25px, transparent 25px, transparent 230px, #D7B399 230px),
+  linear-gradient(to right, #D7B399 25px, transparent 25px, transparent 230px, #D7B399 230px),
+  linear-gradient(to bottom, #D7B399 25px, transparent 25px, transparent 375px, #D7B399 375px),
+  linear-gradient(to bottom, #D7B399 25px, transparent 25px, transparent 375px, #D7B399 375px);
+  background-size: 100% 3px, 100% 3px, 3px 100%, 3px 100%;
+  background-position: 0 0, 0 100%, 0 0, 100% 0;
+  background-repeat: no-repeat;
 }
 
 .product-picture {
-    width: 205px;
-    height: 211px;
-    margin: 22px 25px 25px 25px;
+  width: 205px;
+  height: 211px;
+  margin: 22px 25px 25px 25px;
 }
 
 .product-name,
-.product-price {
-    font-family: Montserrat, sans-serif;
-    font-style: normal;
-    text-align: center;
+.product-price,
+.buy_button {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  text-align: center;
 }
 
 .product-name {
-    display: block;
-    margin: auto;
-    width: 112px;
-    font-size: 14px;
-    line-height: 14px;
-    font-weight: 600;
-    color: black;
-    text-decoration: none;
+  display: block;
+  margin: auto;
+  width: 112px;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 600;
+  color: black;
+  text-decoration: none;
 
-    &:hover {
-        text-decoration: underline;
-    }    
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .product-price {
-    margin-top: 15px;
-    margin-bottom: 25px;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 22px;
-    color: #D7B399;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: #D7B399;
+}
+
+.buy_button {
+  height: 35px;
+  width: 90px;
+  display: block;
+  margin: auto;
+  border-radius: 10px;
+  background-color: #D7B399;
+  border: none;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 500;
+  color: white;
+  outline: none;
+
+  &:hover {
+    background-color: #B88D6E;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: white;
+  }
 }
