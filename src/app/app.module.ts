@@ -13,6 +13,8 @@ import { ProductCardComponent } from './pages/product-card/product-card.componen
 import { CatalogItemComponent } from './components/catalog/catalog-item/catalog-item.component';
 import { CatalogMenuItemComponent } from './components/catalog/catalog-menu-item/catalog-menu-item.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NumberInputComponent } from './components/number-input/number-input.component';
+import { LoadingIndicatorComponent } from './components/loading-indicator/loading-indicator.component';
 
 
 @NgModule({
@@ -27,6 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProductCardComponent,
     CatalogItemComponent,
     CatalogMenuItemComponent,
+    NumberInputComponent,
+    LoadingIndicatorComponent,
   ],
   imports: [
     BrowserModule,

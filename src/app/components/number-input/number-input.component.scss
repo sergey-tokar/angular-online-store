@@ -1,0 +1,37 @@
+.number-input-group {
+  font-family: Montserrat, sans-serif;
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.number {
+  width: 30px;
+  text-align: center;
+  margin: 0;
+}
+
+.change-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: white;
+  background-color: #D7B399;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  padding: 0;
+
+  &:hover {
+    background-color: #B88D6E;
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: white;
+  }
+}

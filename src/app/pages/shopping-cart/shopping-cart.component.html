@@ -1,1 +1,26 @@
-<p>shopping-cart works!</p>
+<div class="shopping-cart">
+  <h2 class="head-text">Выбранные товары</h2>
+
+  <div class="product">
+    <img class="product-picture" src="assets/img/product-picture-example.png">
+    <p class="product-description">Mens Casual Premium</p>
+    <p class="price-per-unit">{{ 100 | currency : 'RUB' : 'symbol-narrow' : '1.0-2' }}</p>
+    <app-number-input></app-number-input>
+    <p class="total-price-per-position">{{ 300 | currency : 'RUB' : 'symbol-narrow' : '1.0-2' }}</p>
+  </div>
+
+  <div class="product">
+    <img class="product-picture" src="assets/img/product-picture-example.png">
+    <p class="product-description">Mens Casual Premium</p>
+    <p class="price-per-unit">{{ 100 | currency : 'RUB' : 'symbol-narrow' : '1.0-2' }}</p>
+    <app-number-input></app-number-input>
+    <p class="total-price-per-position">{{ 300 | currency : 'RUB' : 'symbol-narrow' : '1.0-2' }}</p>
+  </div>
+
+
+  <div class="total-price-group">
+    <p class="total-price-title">Итого</p>
+    <p class="total-price">{{ 300 | currency : 'RUB' : 'symbol-narrow' : '1.0-2' }}</p>
+  </div>
+
+</div>
