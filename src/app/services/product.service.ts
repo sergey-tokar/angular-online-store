@@ -4,9 +4,10 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Api } from '../api';
 import { IProduct } from '../core/interfaces/product';
-import { map, tap } from 'rxjs/operators';
+import { finalize, map, tap } from 'rxjs/operators';
 import { CatalogMenuItemComponent } from '../components/catalog/catalog-menu-item/catalog-menu-item.component';
 import { ProductList } from '../models/product.list';
+import { LoadingIndicatorService } from './loading-indicator.service';
 
 
 @Injectable({
@@ -15,13 +16,15 @@ import { ProductList } from '../models/product.list';
 
 export class ProductService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private loadingIndicatorService: LoadingIndicatorService) { }
 
   public getAllProductsFromServer(): Observable<ProductList> {
+    this.loadingIndicatorService.show();
     return this.http.get(environment.backEndHost + Api.products.getAllProducts)
-      .pipe(map(
-        (response: IProduct[]) => new ProductList(response),
-      ));
+      .pipe(
+        map((response: IProduct[]) => new ProductList(response)),
+        finalize(() => this.loadingIndicatorService.hide()),
+      );
   }
 
 }
